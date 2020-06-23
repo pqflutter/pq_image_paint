@@ -22,7 +22,7 @@ class PQImagePaint extends CustomPainter {
     try {
       var data = await rootBundle.load(path);
       var codec = await UI.instantiateImageCodec(data.buffer.asUint8List(),
-          targetHeight: width, targetWidth: height);
+          targetHeight: height, targetWidth: width);
       var info = await codec.getNextFrame();
       return info.image;
     } catch (e) {
